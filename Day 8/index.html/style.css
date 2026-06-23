@@ -11,26 +11,65 @@ body{
     padding:30px;
 }
 
+/* ---------------- NAVBAR ---------------- */
+
+nav{
+    width:100%;
+    background:#111827;
+    padding:15px 30px;
+    margin-bottom:25px;
+    border-radius:15px;
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    list-style:none;
+    gap:35px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:500;
+    transition:all .3s ease;
+}
+
+nav ul li a:hover{
+    color:#60a5fa;
+    text-decoration:underline;
+    transform:scale(1.1);
+}
+
+/* ---------------- CONTAINER ---------------- */
+
 .container{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     grid-auto-rows:220px;
     gap:20px;
+
+    animation:fadeIn 1s ease;
 }
+
+/* ---------------- CARD ---------------- */
 
 .card{
     background:white;
     border-radius:20px;
     padding:20px;
     box-shadow:0 10px 20px rgba(0,0,0,0.1);
-    transition:.3s;
+    transition:all .3s ease;
     overflow:hidden;
 }
 
 .card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 20px 35px rgba(0,0,0,.2);
+    transform:translateY(-10px);
+    box-shadow:0 20px 35px rgba(0,0,0,.25);
 }
+
+/* ---------------- HERO ---------------- */
 
 .hero{
     grid-column:span 2;
@@ -47,6 +86,14 @@ body{
     object-fit:cover;
     margin-bottom:15px;
     border:5px solid white;
+
+    transition:.3s ease;
+    animation:float 3s ease-in-out infinite;
+}
+
+.hero img:hover{
+    transform:scale(1.08);
+    filter:brightness(110%);
 }
 
 .hero h1{
@@ -63,6 +110,9 @@ body{
     line-height:1.6;
 }
 
+/* ---------------- BUTTON ---------------- */
+
+.btn,
 button{
     padding:12px 28px;
     border:none;
@@ -70,17 +120,23 @@ button{
     background:#2563eb;
     color:white;
     cursor:pointer;
-    transition:.3s;
+    transition:all .3s ease;
 }
 
+.btn:hover,
 button:hover{
     background:#1d4ed8;
-    transform:scale(1.05);
+    transform:scale(1.08);
+    box-shadow:0 10px 20px rgba(37,99,235,.4);
 }
+
+/* ---------------- ABOUT ---------------- */
 
 .about{
     background:#fef3c7;
 }
+
+/* ---------------- PROJECT ---------------- */
 
 .project{
     grid-column:span 2;
@@ -92,18 +148,38 @@ button:hover{
     object-fit:cover;
     border-radius:12px;
     margin:10px 0;
+
+    transition:.3s ease;
 }
+
+.project img:hover{
+    transform:scale(1.05);
+    filter:brightness(110%);
+}
+
+/* ---------------- BLOG ---------------- */
 
 .blog{
     background:#dbeafe;
 }
+
+/* ---------------- GALLERY ---------------- */
 
 .gallery img{
     width:100%;
     height:100%;
     object-fit:cover;
     border-radius:15px;
+
+    transition:.3s ease;
 }
+
+.gallery img:hover{
+    transform:scale(1.05);
+    filter:brightness(110%);
+}
+
+/* ---------------- SKILLS ---------------- */
 
 .skills{
     background:#dcfce7;
@@ -118,6 +194,8 @@ button:hover{
     margin-bottom:10px;
 }
 
+/* ---------------- CONTACT ---------------- */
+
 .contact{
     background:#ffe4e6;
 }
@@ -125,6 +203,8 @@ button:hover{
 .contact p{
     margin:12px 0;
 }
+
+/* ---------------- QUOTE ---------------- */
 
 .quote{
     background:#ede9fe;
@@ -138,7 +218,46 @@ button:hover{
     line-height:1.7;
 }
 
+/* ---------------- ANIMATIONS ---------------- */
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
 @media(max-width:992px){
+
+nav ul{
+    flex-wrap:wrap;
+    gap:20px;
+}
 
 .container{
 grid-template-columns:repeat(2,1fr);
@@ -152,6 +271,11 @@ grid-column:span 2;
 }
 
 @media(max-width:600px){
+
+nav ul{
+    flex-direction:column;
+    align-items:center;
+}
 
 .container{
 grid-template-columns:1fr;
