@@ -1,0 +1,379 @@
+
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f4f6f9;
+    color:#333;
+    line-height:1.6;
+}
+
+/* ==========================
+   NAVIGATION
+========================== */
+
+nav{
+    width:100%;
+    background:#2563eb;
+    color:#fff;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 8%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.7rem;
+    font-weight:700;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#ffd43b;
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.container{
+
+    width:90%;
+    max-width:1400px;
+    margin:40px auto;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+
+}
+
+/* ==========================
+   CARD
+========================== */
+
+.card{
+
+    background:#fff;
+    border-radius:20px;
+    padding:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.card img{
+
+    width:100%;
+    display:block;
+    border-radius:15px;
+
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+
+    grid-column:span 2;
+    grid-row:span 2;
+
+    text-align:center;
+
+}
+
+.hero img{
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+    object-fit:cover;
+
+    margin:0 auto 20px;
+
+}
+
+.hero h1{
+
+    font-size:2.5rem;
+
+}
+
+.hero h2{
+
+    color:#2563eb;
+    margin:10px 0;
+
+}
+
+.hero p{
+
+    margin:15px 0;
+
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+.btn{
+
+    padding:12px 28px;
+
+    border:none;
+    border-radius:8px;
+
+    background:#2563eb;
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* ==========================
+   PROJECT
+========================== */
+
+.project img{
+
+    margin:15px 0;
+
+}
+
+/* ==========================
+   GALLERY
+========================== */
+
+.gallery img{
+
+    height:100%;
+    object-fit:cover;
+
+}
+
+/* ==========================
+   SKILLS
+========================== */
+
+.skills ul{
+
+    padding-left:20px;
+    margin-top:15px;
+
+}
+
+.skills li{
+
+    margin-bottom:10px;
+
+}
+
+/* ==========================
+   CONTACT
+========================== */
+
+.contact p{
+
+    margin:10px 0;
+
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media(max-width:992px){
+
+nav{
+
+    flex-direction:column;
+    gap:15px;
+
+}
+
+nav ul{
+
+    flex-wrap:wrap;
+    justify-content:center;
+
+}
+
+.container{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.hero{
+
+    grid-column:span 2;
+
+}
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+nav{
+
+    padding:20px;
+
+}
+
+nav ul{
+
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+
+}
+
+.container{
+
+    width:95%;
+    grid-template-columns:1fr;
+
+}
+
+.hero,
+.about,
+.project,
+.blog,
+.gallery,
+.skills,
+.contact,
+.quote{
+
+    grid-column:span 1;
+    grid-row:auto;
+
+}
+
+.hero img{
+
+    width:140px;
+    height:140px;
+
+}
+
+.hero h1{
+
+    font-size:2rem;
+
+}
+
+.hero h2{
+
+    font-size:1.4rem;
+
+}
+
+.card{
+
+    padding:18px;
+
+}
+
+.btn{
+
+    width:100%;
+
+}
+
+}
+
+/* ==========================
+   SMALL MOBILE
+========================== */
+
+@media(max-width:480px){
+
+body{
+
+    font-size:14px;
+
+}
+
+.logo{
+
+    font-size:1.4rem;
+
+}
+
+.hero h1{
+
+    font-size:1.7rem;
+
+}
+
+.hero h2{
+
+    font-size:1.2rem;
+
+}
+
+.card{
+
+    padding:15px;
+
+}
+
+.btn{
+
+    padding:12px;
+    font-size:15px;
+
+}
+
+}
